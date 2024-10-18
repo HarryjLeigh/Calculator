@@ -2,6 +2,7 @@
 using CalculatorLibrary;
 
 bool endApp = false;
+Calculator calculator = new Calculator();
 // Display title as the C# console calculator app.
 Console.WriteLine("Console Calculator in C#\r");
 Console.WriteLine("------------------------\n");
@@ -55,7 +56,7 @@ while (!endApp)
     {
         try
         {
-            result = Calculator.DoOperation(cleanNum1, cleanNum2, op);
+            result = calculator.DoOperation(cleanNum1, cleanNum2, op);
             if (double.IsNaN(result))
             {
                 Console.WriteLine("This operation will result in a mathematical error.\n");
@@ -75,4 +76,5 @@ while (!endApp)
 
     Console.WriteLine("\n"); // Friendly linespacing.
 }
+calculator.Finish();
 
